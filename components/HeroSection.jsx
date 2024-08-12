@@ -3,7 +3,6 @@
 import Wrapper from "@/components/ui/Wrapper";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import { Eye } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 function HeroSection() {
@@ -14,7 +13,6 @@ function HeroSection() {
     const words = content.split(" ");
 
     const isMobile = window.innerWidth <= 768
-    console.log(isMobile)
 
     if(!isMobile) {
         useEffect(() => {
@@ -23,7 +21,7 @@ function HeroSection() {
     
             function mouseEnter() {
                 gsap.to(buttonRef.current , {
-                    width: "7vw",
+                    width: "6rem",
                     duration:0.5,
                     ease:"power4.out"
                 })
@@ -31,7 +29,7 @@ function HeroSection() {
     
             function mouseLeave() {
                 gsap.to(buttonRef.current , {
-                    width: "auto",
+                    width: "2.5rem",
                     duration:0.5,
                     ease:"power4.out"
                 })
@@ -66,10 +64,10 @@ function HeroSection() {
         </h3>
 
         <button 
-            className="w-fit rounded-full bg-black text-white p-3 flex items-center justify-center mt-2"
+            className="w-10 h-10 rounded-full bg-black text-white p-3 flex items-center justify-center mt-2"
             ref={buttonRef}
         >
-            <Eye className="w-fit"/>
+            👁‍🗨
         </button>
     </Wrapper>
 
