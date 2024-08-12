@@ -1,8 +1,8 @@
 
 
-function Wrapper({children , styles}) {
+function Wrapper({children , styles ,onclick}) {
     return (
-        <div className={`${styles} bg-[#F7F7F7] flex flex-col items-center justify-center gap-5 rounded-xl`}>
+        <div onClick={onclick} className={`${styles} bg-[#F7F7F7] flex flex-col items-center justify-center gap-5 rounded-xl`}>
             {children}
         </div>
     )
