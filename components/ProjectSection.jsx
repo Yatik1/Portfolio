@@ -4,30 +4,65 @@ import { useRef } from "react"
 
 import Image from "next/image"
 import Wrapper from "./ui/Wrapper"
-import dashboard from "@/assets/dashboardmockupdark.png"
+import dashboard from "@/assets/dashboardmockup.png"
 import chazily from "@/assets/chazilymockup.png"
 import cinemax from "@/assets/cinemaxmobilemockup.png"
 import store from "@/assets/storemockup.png"
 import blogbud from "@/assets/blogbudmockup.png"
 import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 
 
 function ProjectSection() {
 
   const wrapperRef = useRef(null)
+  const imgRef = useRef(null)
+  const titleRef = useRef(null)
 
   useGSAP(() => {
     if(wrapperRef.current) {
-      
+      function onmouseEnter() {
+        gsap.to(imgRef.current , {
+          scale : 1.1 , 
+          duration : 1 ,
+        })
+
+        gsap.fromTo(
+          titleRef.current,
+          { y: -100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, delay: 0.3 }
+        );
+      }
+
+      function onmouseLeave() {
+        
+        gsap.to(imgRef.current , {
+          scale:1 , 
+          duration : 1,
+        })
+
+        gsap.to(titleRef.current, {
+          opacity: 0,
+          y: -100,
+          duration: 0.7,
+          delay:0.3
+        });
+
+      }
+
+      wrapperRef.current.addEventListener("mouseenter" , onmouseEnter)
+      wrapperRef.current.addEventListener("mouseleave" , onmouseLeave)
     }
-  } , [])
+  } , [wrapperRef.current , imgRef.current , titleRef.current])
 
   return (
     <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 items-center justify-center w-full mb-3 px-5"> 
       
-      <Wrapper onclick={() => {alert("clicked")}} ref={wrapperRef} styles="h-[65vw] md:h-[38vw] rounded-3xl border border-stone-200">
-        <div className="relative w-full md:w-[46vw] h-[50vw] md:h-[27vw] overflow-hidden">
+      <Wrapper ref={wrapperRef} styles="relative h-[65vw] md:h-[38vw] rounded-3xl border border-stone-200 overflow-hidden">
+        
+        <div className="relative w-full md:w-[46vw] h-[50vw] md:h-[27vw] overflow-hidden" >
           <Image 
+            ref={imgRef}
             src={store}
             alt="image"
             className="absolute inset-0 w-full h-full"
@@ -35,6 +70,11 @@ function ProjectSection() {
             objectFit="cover"
           />
         </div>
+
+        <div ref={titleRef} className="hidden absolute top-6 z-[999] w-full h-full opacity-0 lg:flex items-start justify-center">
+          <p className="inline bg-[#DDDDDD] text-[#676767] px-3 py-2 text-[0.78rem] rounded-full tracking-tighter">Store</p>
+        </div>
+
       </Wrapper>
 
       <Wrapper styles="h-[65vw] md:h-[38vw] rounded-3xl border border-stone-200">
