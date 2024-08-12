@@ -45,10 +45,10 @@ function HeroSection() {
     }
 
     return (
-        <Wrapper styles="w-[90vw] md:w-[95vw] h-[90vw] md:h-[42vw] px-[7vw] ">
+        <Wrapper styles="w-[90vw] md:w-[95vw] h-[90vw] md:h-[42vw]">
         
         <h3 
-            className="text-center text-[1.1rem] lg:text-[1.5rem] tracking-tighter leading-[1.2rem] lg:leading-7 lg:w-[55rem]"
+            className="w-full text-center text-[1.1rem] lg:text-[1.5rem] tracking-tighter leading-[1.2rem] lg:leading-7 lg:w-[55rem] p-[7vw] "
         >
             {words.map((word, index) => (
                 <motion.span
