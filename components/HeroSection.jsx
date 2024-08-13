@@ -38,7 +38,7 @@ function HeroSection() {
                 buttonRef.current.addEventListener("mouseenter" , mouseEnter)
                 buttonRef.current.addEventListener("mouseleave" , mouseLeave)
             }
-        } , [])
+        } , [isMobile])
     
     }
 
