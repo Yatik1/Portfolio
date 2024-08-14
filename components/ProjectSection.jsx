@@ -9,6 +9,8 @@ import cinemax from "@/assets/cinemaxmobilemockup.png"
 import chazily from "@/assets/chazilymockup.png"
 import blogbud from "@/assets/blogbudmockup.png"
 import gsap from "gsap";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 
 const projectData = [
   {
@@ -34,11 +36,18 @@ const projectData = [
 ];
 
 function ProjectSection() {
+
+  const { scrollYProgress } = useScroll();
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   const wrapperRefs = useRef([]);
   const imgRefs = useRef([]);
   const titleRefs = useRef([]);
 
   useEffect(() => {
+
     wrapperRefs.current.forEach((wrapperRef, index) => {
       if (wrapperRef) {
         function onMouseEnter() {
@@ -82,7 +91,16 @@ function ProjectSection() {
           ref={(el) => (wrapperRefs.current[index] = el)}
           styles={`relative h-[65vw] md:h-[38vw] rounded-3xl border border-stone-200 overflow-hidden cursor`}
         >
-          <div className="relative w-full md:w-[46vw] h-full md:h-[27vw] overflow-hidden">
+          <motion.div 
+            key={index}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+                duration: 0.7,
+                delay: 0.6,
+                ease: [0.42, 0, 0.58, 1],
+            }}
+            className="relative w-full md:w-[46vw] h-full md:h-[27vw] overflow-hidden">
             <Image
               ref={(el) => (imgRefs.current[index] = el)}
               src={project.src}
@@ -91,7 +109,7 @@ function ProjectSection() {
               layout="fill"
               objectFit="contain"
             />
-          </div>
+          </motion.div>
 
           <div
             ref={(el) => (titleRefs.current[index] = el)}
