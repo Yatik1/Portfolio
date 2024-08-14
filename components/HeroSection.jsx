@@ -1,6 +1,7 @@
 "use client";
 
 import Wrapper from "@/components/ui/Wrapper";
+import { useGSAP } from "@gsap/react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
@@ -15,7 +16,7 @@ function HeroSection() {
     const isMobile = window.innerWidth <= 768
 
     if(!isMobile) {
-        useEffect(() => {
+        useGSAP(() => {
 
             if(buttonRef.current) {
     
