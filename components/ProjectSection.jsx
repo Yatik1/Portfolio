@@ -3,44 +3,13 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Wrapper from "./ui/Wrapper";
-import dashboard from "@/assets/dashboardmockup.png";
-import store from "@/assets/storemockup.png";
-import cinemax from "@/assets/cinemaxmobilemockup.png"
-import chazily from "@/assets/chazilymockup.png"
-import blogbud from "@/assets/blogbudmockup.png"
 import gsap from "gsap";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion} from "framer-motion";
+import Link from "next/link";
+import { projectData } from "@/data/projectData";
 
-
-const projectData = [
-  {
-    src: dashboard,
-    title: "Dashboard & CMS",
-  },
-  {
-    src: store,
-    title: "Store",
-  },
-  {
-    src: blogbud ,
-    title : "Blog Bud"
-  } , 
-  {
-    src:cinemax ,
-    title:"Cinemax"
-  } ,
-  {
-    src:chazily,
-    title:"Chazily"
-  }
-];
 
 function ProjectSection() {
-
-  const { scrollYProgress } = useScroll();
-
-  const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const wrapperRefs = useRef([]);
   const imgRefs = useRef([]);
@@ -86,7 +55,8 @@ function ProjectSection() {
   return (
     <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 items-center justify-center w-full mb-3 px-5">
       {projectData.map((project, index) => (
-        <Wrapper
+        <Link href={`/${project.id}`} key={project.id} >
+          <Wrapper
           key={index}
           ref={(el) => (wrapperRefs.current[index] = el)}
           styles={`relative h-[65vw] md:h-[38vw] rounded-3xl border border-stone-200 overflow-hidden cursor`}
@@ -120,6 +90,7 @@ function ProjectSection() {
             </p>
           </div>
         </Wrapper>
+      </Link>
       ))}
     </div>
   );
