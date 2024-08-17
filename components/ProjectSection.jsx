@@ -59,7 +59,7 @@ function ProjectSection() {
           <Wrapper
           key={index}
           ref={(el) => (wrapperRefs.current[index] = el)}
-          styles={`relative h-[65vw] md:h-[38vw] rounded-3xl border border-stone-200 overflow-hidden cursor`}
+          styles={`relative h-[65vw] md:h-[38vw] rounded-3xl overflow-hidden cursor`}
         >
           <motion.div 
             key={index}
