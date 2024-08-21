@@ -8,5 +8,8 @@ const Wrapper = React.forwardRef(({ children, styles  , key}, ref) => {
     );
 });
 
+
+Wrapper.displayName = 'Wrapper';
+
 export default Wrapper;
 
