@@ -12,6 +12,7 @@ export const projectData = [
       title: "Dashboard & CMS",
       githubLink: "https://github.com/Yatik1/Ecommerce-admin-panel",
       deployedLink: "https://estore-admin-panel-orcin.vercel.app/",
+      techs:["Next.js", "TypeScript", "Tailwind", "Prisma", "PostgreSQL", "Stripe"]
     },
     {
       id:2,
@@ -19,7 +20,8 @@ export const projectData = [
       title: "Store",
       description:"An online store designed to deliver a seamless shopping experience across all devices. The store is optimized for performance and usability, offering a responsive design that adapts to various screen sizes, ensuring an enjoyable and hassle-free shopping journey.",
       githubLink: "https://github.com/Yatik1/Nextjs-ecommerce",
-      deployedLink: "https://store-orcin-iota.vercel.app/"
+      deployedLink: "https://store-orcin-iota.vercel.app/",
+      techs:["Next.js", "TypeScript", "Tailwind", "Prisma", "PostgreSQL", "Stripe"]
     },
     {
       id:3,
@@ -27,7 +29,8 @@ export const projectData = [
       title : "Blog Bud",
       description: "A comprehensive platform for creating, publishing, and managing blogs, with tools for updating posts to ensure accuracy and relevance.",
       githubLink: "https://github.com/Yatik1/nextjs_blog",
-      deployedLink: "https://cinemax-eight.vercel.app/"
+      deployedLink: "https://cinemax-eight.vercel.app/",
+      techs:["Next.js", "TypeScript", "Tailwind", "MongoDB" , "mongoose"]
 
     } , 
     {
@@ -36,7 +39,8 @@ export const projectData = [
       title:"Cinemax",
       description:"A dynamic web application offering users comprehensive access to movie data, boosting application performance and reducing state management complexity by 40%.",
       githubLink: "https://github.com/Yatik1/stream-app",
-      deployedLink: "https://cinemax-eight.vercel.app/"
+      deployedLink: "https://cinemax-eight.vercel.app/",
+      techs:["React", "Redux", "NodeJS" , "SASS"]
     } ,
     {
       id:5,
@@ -44,7 +48,8 @@ export const projectData = [
       title:"Chazily",
       description:"Developed a powerful real-time chat application to enhance user communication and interaction , integrated with Socket.io delivering a smooth and instantaneous messaging experience.",
       githubLink: "https://github.com/Yatik1/chat-app",
-      deployedLink: "https://chazily.vercel.app/"
+      deployedLink: "https://chazily.vercel.app/",
+      techs:["React", "MongoDB", "NodeJS", "ExpressJS", "JWTs", "Socket.io", "Chakra UI"]
     }
   ];
   
