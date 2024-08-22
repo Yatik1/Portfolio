@@ -29,7 +29,7 @@ export const projectData = [
       title : "Blog Bud",
       description: "A comprehensive platform for creating, publishing, and managing blogs, with tools for updating posts to ensure accuracy and relevance.",
       githubLink: "https://github.com/Yatik1/nextjs_blog",
-      deployedLink: "https://cinemax-eight.vercel.app/",
+      deployedLink: "https://blogbud.vercel.app/",
       techs:["Next.js", "TypeScript", "Tailwind", "MongoDB" , "mongoose"]
 
     } , 
