@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
 function HeroSection() {
 
     const buttonRef = useRef(null)
-    // const router = useRouter()
+    const router = useRouter()
     const isMobile = useRef(false)
 
     let content = "Driven by the art of crafting elegant and intuitive user interfaces, transforming them into visually compelling web experiences that are both functionally robust & aesthetically pleasing.";
@@ -75,7 +75,7 @@ function HeroSection() {
         <button 
             className="w-10 h-10 rounded-full bg-black text-white p-3 flex items-center justify-center mt-2"
             ref={buttonRef}
-            // onClick={() => router.push("/about")}
+            onClick={() => router.push("/about")}
         >
             👁‍🗨
         </button>
