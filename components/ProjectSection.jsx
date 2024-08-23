@@ -59,7 +59,7 @@ function ProjectSection() {
           <Wrapper
           key={index}
           ref={(el) => (wrapperRefs.current[index] = el)}
-          styles={`relative h-[65vw] md:h-[38vw] rounded-3xl overflow-hidden cursor`}
+          styles="relative h-[65vw] md:h-[38vw] rounded-3xl overflow-hidden cursor drop-shadow-sm"
         >
           <motion.div 
             key={index}
@@ -70,7 +70,7 @@ function ProjectSection() {
                 delay: 0.6,
                 ease: [0.42, 0, 0.58, 1],
             }}
-            className="relative w-full md:w-[46vw] h-full md:h-[27vw] overflow-hidden">
+            className="relative w-full md:w-[46vw] h-full md:h-[27vw] overflow-hidden ">
             <Image
               ref={(el) => (imgRefs.current[index] = el)}
               src={project.src}
