@@ -25,15 +25,15 @@ function Marquee() {
 
     return (
         <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: "30%" }}
-            transition={{ repeat: Infinity, ease: "linear", duration:20, delay:0.5 }}
+            initial={{ x: "40%" }}
+            animate={{ x: "-40%" }}
+            transition={{ repeat: Infinity, ease: "linear", duration:60 }}
             className="flex items-center justify-center gap-[0.4rem] md:gap-3"
         >
             {skillsIcons.map((icon , index) => (
                 <div 
                   key={index}
-                  className="relative flex items-center justify-center w-9 h-9 md:w-7 md:h-7"
+                  className="relative flex items-center justify-center w-6 h-6 md:w-7 md:h-7"
                 >
                   <Image 
                     key={index}
@@ -49,7 +49,7 @@ function Marquee() {
             {skillsIcons.map((icon , index) => (
                 <div 
                   key={index}
-                  className="relative flex items-center justify-center w-5 h-5 md:w-7 md:h-7"
+                  className="relative flex items-center justify-center w-6 h-6 md:w-7 md:h-7"
                 >
                   <Image 
                     key={index}
@@ -65,7 +65,7 @@ function Marquee() {
             {skillsIcons.map((icon , index) => (
                 <div 
                   key={index}
-                  className="relative flex items-center justify-center w-5 h-5 md:w-7 md:h-7"
+                  className="relative flex items-center justify-center w-6 h-6 md:w-7 md:h-7"
                 >
                   <Image 
                     key={index}
@@ -81,7 +81,7 @@ function Marquee() {
             {skillsIcons.map((icon , index) => (
                 <div 
                   key={index}
-                  className="relative flex items-center justify-center w-5 h-5 md:w-7 md:h-7"
+                  className="relative flex items-center justify-center w-6 h-6 md:w-7 md:h-7"
                 >
                   <Image 
                     key={index}
@@ -98,7 +98,7 @@ function Marquee() {
 {skillsIcons.map((icon , index) => (
                 <div 
                   key={index}
-                  className="relative flex items-center justify-center w-5 h-5 md:w-7 md:h-7"
+                  className="relative flex items-center justify-center w-6 h-6 md:w-7 md:h-7"
                 >
                   <Image 
                     key={index}
@@ -115,7 +115,7 @@ function Marquee() {
 {skillsIcons.map((icon , index) => (
                 <div 
                   key={index}
-                  className="relative flex items-center justify-center w-5 h-5 md:w-7 md:h-7"
+                  className="relative flex items-center justify-center w-6 h-6 md:w-7 md:h-7"
                 >
                   <Image 
                     key={index}
