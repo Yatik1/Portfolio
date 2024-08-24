@@ -11,8 +11,8 @@ function SkillSection() {
                 textColor="text-[#d4d3d3] hover:text-stone-400"
             />
 
-            <Wrapper styles="p-10 overflow-hidden">
-                <div className="flex items-center justify-center bg-white px-5 py-2 rounded-lg border border-[#ddddd] overflow-hidden w-[55vw] md:w-[45vw] drop-shadow-md">
+            <Wrapper styles="p-10">
+                <div className="flex items-center justify-center bg-white px-5 py-2 rounded-lg border border-[#ddddd] overflow-hidden w-[55vw] md:w-[45vw]">
                     <Marquee /> 
                 </div>
             </Wrapper>
