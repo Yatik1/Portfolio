@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header 
           title="Yatik Srivastava"
-          textColor="text-[#d4d3d3] hover:text-stone-400"
+          textColor="text-[#d4d3d3] hover:text-stone-400 cursor-pointer"
         />
         {children}
       </body>
