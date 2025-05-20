@@ -1,10 +1,11 @@
 "use client";
 
-import Wrapper from "@/components/ui/Wrapper";
+
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
+import Wrapper from "./ui/Wrapper";
 
 function HeroSection() {
 
@@ -12,7 +13,7 @@ function HeroSection() {
     const router = useRouter()
     const isMobile = useRef(false)
 
-    let content = "Driven by the art of crafting elegant and intuitive user interfaces, transforming them into visually compelling web experiences that are both functionally robust & aesthetically pleasing.";
+    let content = "Driven by the craft of building elegant and intuitive user interfaces, I transform ideas into visually compelling web experiences that are both functionally robust and aesthetically refined.";
     const words = content.split(" ");
 
 
@@ -52,7 +53,7 @@ function HeroSection() {
     } , [])    
 
     return (
-        <Wrapper styles="w-[90vw] md:w-[95vw] h-[90vw] md:h-[42vw]">
+        <Wrapper styles="w-[90vw] md:w-[95vw] h-[90vw] md:h-[49vw] border border-[#F2F4E4] shadow shadow-lg">
         
         <h3 
             className="w-full text-center text-[1.1rem] lg:text-[1.5rem] tracking-tighter leading-[1.2rem] lg:leading-7 lg:w-[55rem] p-[7vw] "
@@ -73,11 +74,11 @@ function HeroSection() {
         </h3>
 
         <button 
-            className="w-10 h-10 rounded-full bg-black text-white p-3 flex items-center justify-center mt-2"
+            className="w-10 h-10 rounded-full bg-gradient-to-r from-black to-[#666666] text-white p-3 flex items-center justify-center mt-2"
             ref={buttonRef}
             onClick={() => router.push("/about")}
         >
-            👁‍🗨
+            👋
         </button>
     </Wrapper>
 
