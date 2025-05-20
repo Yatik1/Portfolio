@@ -1,55 +1,82 @@
-import store from "@/assets/storemockup.png";
-import dashboard from "@/assets/dashboardmockup.png";
-import cinemax from "@/assets/cinemaxmobilemockup.png"
-import chazily from "@/assets/chazilymockup.png"
-import blogbud from "@/assets/blogbudmockup.png"
+import store from "../assets/store.svg";
+import cms from "../assets/cms.svg";
+import chazel from "../assets/chazel.svg"
+import formers from "../assets/formers.svg"
+
+import linkedin from "../assets/linkedin.png"
+import github from "../assets/github.png"
+import twitter from "../assets/twitter.png"
+import mail from "../assets/mail.png"
 
 export const projectData = [
     {
-      id:1,
-      src: dashboard,
-      description: "Developed a unified system featuring a user dashboard for managing preferences, tracking orders, and customizing products, alongside a CMS for efficient content oversight and updates, ensuring accuracy and relevance.",
-      title: "Dashboard & CMS",
-      githubLink: "https://github.com/Yatik1/Ecommerce-admin-panel",
-      deployedLink: "https://estore-admin-panel-orcin.vercel.app/",
-      techs:["Next.js", "TypeScript", "Tailwind", "Prisma", "PostgreSQL", "Stripe"]
+      src: formers,
+      title:"formers",
+      cardWidth:"282px",
+      cardHeight:"403px",
+      bg:"bg-gradient-to-b from-[#595858] via-[#09090B] to-[#111113]",
+      position:"top-10 right-0",
+      deployedLink:"https://formers.vercel.app/",
+      githubLink:""
     },
     {
-      id:2,
-      src: store,
-      title: "Store",
-      description:"An online store designed to deliver a seamless shopping experience across all devices. The store is optimized for performance and usability, offering a responsive design that adapts to various screen sizes, ensuring an enjoyable and hassle-free shopping journey.",
-      githubLink: "https://github.com/Yatik1/Nextjs-ecommerce",
-      deployedLink: "https://store-orcin-iota.vercel.app/",
-      techs:["Next.js", "TypeScript", "Tailwind", "Prisma", "PostgreSQL", "Stripe"]
+      src: cms,
+      title:"cms",
+      cardWidth:"285px",
+      cardHeight:"364px",
+      bg:"bg-gradient-to-b from-[#BCE1FB] to-[#020817]",
+      position:"top-10 right-0",
+      deployedLink:"https://estore-admin-panel-orcin.vercel.app/"
     },
     {
-      id:3,
-      src: blogbud ,
-      title : "Blog Bud",
-      description: "A comprehensive platform for creating, publishing, and managing blogs, with tools for updating posts to ensure accuracy and relevance.",
-      githubLink: "https://github.com/Yatik1/nextjs_blog",
-      deployedLink: "https://blogbud.vercel.app/",
-      techs:["Next.js", "TypeScript", "Tailwind", "MongoDB" , "mongoose"]
+      title:"Zone",
+      cardWidth:"517px",
+      cardHeight:"299px",
+      bg:"bg-gradient-to-b from-[#D7CABE] to-[#847D77]",
+      deployedLink:"",
+    },
+    {
+      src: chazel ,
+      title:"chazel",
+      cardWidth:"222px",
+      cardHeight:"324px",
+      bg:"bg-gradient-to-b from-[#FFFFFF] to-[#585858]",
+      position:"bottom-0 left-[1rem]",
+      deployedLink:"",
 
     } , 
     {
-      id:4,
-      src:cinemax ,
-      title:"Cinemax",
-      description:"A dynamic web application offering users comprehensive access to movie data, boosting application performance and reducing state management complexity by 40%.",
-      githubLink: "https://github.com/Yatik1/stream-app",
-      deployedLink: "https://cinemax-eight.vercel.app/",
-      techs:["React", "Redux", "NodeJS" , "SASS"]
-    } ,
-    {
-      id:5,
-      src:chazily,
-      title:"Chazily",
-      description:"Developed a powerful real-time chat application to enhance user communication and interaction , integrated with Socket.io delivering a smooth and instantaneous messaging experience.",
-      githubLink: "https://github.com/Yatik1/chat-app",
-      deployedLink: "https://chazily.vercel.app/",
-      techs:["React", "MongoDB", "NodeJS", "ExpressJS", "JWTs", "Socket.io", "Chakra UI"]
-    }
+      src:store ,
+      title:"store",
+      cardWidth:"285px",
+      cardHeight:"364px",
+      bg:"bg-gradient-to-b from-[#CBCDD4] to-[#595A5B]",
+      position:"top-10 right-0",
+      deployedLink:"https://store-orcin-iota.vercel.app/"
+    } 
   ];
+
+
+  export const socialData = [
+    {
+      source:"LinkedIn",
+      logo:linkedin,
+      link:"https://www.linkedin.com/in/yatiksri1103/",
+    },
+    {
+      source:"Github",
+      logo:github,
+      link:"https://github.com/Yatik1/",
+    },
+    {
+      source:"X",
+      logo:twitter,
+      link:"https://x.com/YatikSrivastava",
+    },
+    {
+    source: "Mail",
+    logo: mail,
+    link: "mailto:yatiksrivastava1@gmail.com",
+  },
+  ]
   
