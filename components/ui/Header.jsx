@@ -3,7 +3,7 @@
 import { useRef, useState } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, X } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 const Header = () => {
@@ -79,15 +79,19 @@ const Header = () => {
     return open ? (
         <div
             ref={toggleRef2}
-            onClick={() => setOpen(false)}
-            className="m-7 bg-gradient-to-r from-black to-[#666666] py-[0.35rem] rounded-full flex flex-1 items-center justify-between gap-3 overflow-hidden cursor-pointer"
+            className="m-7 bg-gradient-to-r from-black to-[#666666] p-2 rounded-full flex flex-1 items-center justify-center gap-1 overflow-hidden cursor-pointer"
         >
-            <div className="flex flex-1 items-center justify-center gap-1 pl-3">
-                <p className="text-xs text-gray-300 text-animate">Hello!</p>
-            </div>
-            <div className="flex items-end justify-center gap-1 pr-2">
+            <div className="flex items-end justify-center">
                 <div
-                    className="bg-blue-500 rounded-full w-6 h-6 flex items-center justify-center"
+                    className="bg-gradient-to-br from-orange-600 to-orange-400 rounded-full w-5 h-5 flex items-center justify-center"
+                    onClick={() => setOpen(false)}
+                >
+                    <X className="text-white text-animate" width={12} height={12} />
+                </div>
+            </div>
+            <div className="flex items-end justify-center">
+                <div
+                    className="bg-gradient-to-br from-blue-600 to-blue-400 rounded-full w-5 h-5 flex items-center justify-center"
                     onClick={(e) => {
                         e.stopPropagation();
                         router.push("/about");
