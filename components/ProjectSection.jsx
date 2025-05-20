@@ -1,99 +1,115 @@
-  "use client";
+"use client";
 
-import { useRef, useEffect } from "react";
+import { LucideArrowUpRight } from "lucide-react";
+import { projectData } from "../data/projectData";
 import Image from "next/image";
-import Wrapper from "./ui/Wrapper";
-import gsap from "gsap";
-import { motion} from "framer-motion";
+import { useState } from "react";
 import Link from "next/link";
-import { projectData } from "@/data/projectData";
 
 
 function ProjectSection() {
 
-  const wrapperRefs = useRef([]);
-  const imgRefs = useRef([]);
-  const titleRefs = useRef([]);
+  return (
+    <div className="md:h-screen w-full flex items-center justify-center mt-6 px-3">
+      <div className="bg-gradient-to-br from-[#09090B] via-stone-800 to-[#666666] w-[90vw] md:w-[95.5vw] h-full md:h-[49vw] rounded-xl flex flex-col items-center justify-between overflow-hidden px-3">
+        <h2 className="text-white text-[3.5rem] tracking-tighter  hover:border-b border-white mt-3 md:mt-10">
+          Projects
+        </h2>
 
-  useEffect(() => {
+        <div className="w-full overflow-y-auto md:overflow-x-auto whitespace-nowrap noscroll">
+          <ScreenProjects />
+          <MobileProjects />
+        </div>
+      </div>
+    </div>
+  );
+}
 
-    wrapperRefs.current.forEach((wrapperRef, index) => {
-      if (wrapperRef) {
-        function onMouseEnter() {
-          gsap.to(imgRefs.current[index], {
-            scale: 1.1,
-            duration: 1,
-          });
-
-          gsap.fromTo(
-            titleRefs.current[index],
-            { y: -100, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5, }
-          );
-        }
-
-        function onMouseLeave() {
-          gsap.to(imgRefs.current[index], {
-            scale: 1,
-            duration: 1,
-          });
-
-          gsap.to(titleRefs.current[index], {
-            opacity: 0,
-            y: -100,
-            duration: 0.7,
-          });
-        }
-
-        wrapperRef.addEventListener("mouseenter", onMouseEnter);
-        wrapperRef.addEventListener("mouseleave", onMouseLeave);
-
-      }
-    });
-  }, []);
+function ScreenProjects() {
+  const [hoveredIndex, setHoveredIndex] = useState(null)
 
   return (
-    <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 items-center justify-center w-full mb-3 px-5">
+    <div className="hidden md:block">
       {projectData.map((project, index) => (
-        <Link href={`/${project.id}`} key={project.id} >
-          <Wrapper
+        <div           
           key={index}
-          ref={(el) => (wrapperRefs.current[index] = el)}
-          styles="relative h-[65vw] md:h-[38vw] rounded-3xl overflow-hidden cursor drop-shadow-sm"
+          className="inline-block"
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
         >
-          <motion.div 
-            key={index}
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-                duration: 0.7,
-                delay: 0.6,
-                ease: [0.42, 0, 0.58, 1],
-            }}
-            className="relative w-full md:w-[46vw] h-full md:h-[27vw] overflow-hidden ">
+          {hoveredIndex === index && (
+            <div key={project.title} className="flex items-center justify-start ml-4 mb-1 gap-1 text-white w-fit border-b border-white border-dotted">
+              {project.deployedLink ? (
+                <Link 
+                  href={project.deployedLink} 
+                  target="_blank" 
+                  className="lowercase pixelFont hover:text-gray-300 transition-colors"
+                >
+                  {project.title === "Zone" ? "Launch soon" : project.title}
+                </Link>
+              ) : (
+                <span className="lowercase pixelFont text-gray-500">
+                  {project.title === "Zone" ? "Launch soon" : project.title}
+                </span>
+              )}
+              <LucideArrowUpRight className="w-[0.8rem] h-[0.8rem]" />
+            </div>
+          )}
+
+          <div 
+            style={{ width: project.cardWidth, height: project.cardHeight }}
+            className={`rounded-[12px] relative overflow-hidden ${project.bg} mx-[0.25rem]`}
+          >
+          
+          {project.src ? (
             <Image
-              ref={(el) => (imgRefs.current[index] = el)}
               src={project.src}
               alt={project.title}
-              className="absolute inset-0 w-full h-full"
-              layout="fill"
-              objectFit="contain"
+              className={`absolute ${project.position}`}
             />
-          </motion.div>
-
-          <div
-            ref={(el) => (titleRefs.current[index] = el)}
-            className="hidden absolute top-6 z-[999] w-full h-full opacity-0 lg:flex items-start justify-center"
-          >
-            <p className="inline bg-[#DDDDDD] text-[#676767] px-3 py-2 text-[0.78rem] rounded-full tracking-tighter">
+          ) : (
+            <div className="bg-gradient-to-r from-[#48453F] to-[#716A64] bg-clip-text text-transparent flex items-center justify-center h-full text-[3rem] tracking-tighter font-bold">
               {project.title}
-            </p>
-          </div>
-        </Wrapper>
-      </Link>
+            </div>
+          )}
+        </div>
+        </div>
       ))}
     </div>
   );
+}
+
+function MobileProjects() {
+  return (
+    <div className="block md:hidden">
+      {projectData.map((project, index) => (
+        <div           
+          key={index}
+          className="flex flex-col items-center justify-center my-2"
+        >
+          <Link 
+            href={project.deployedLink}
+            target="_blank"
+            style={{ width: "100%", height: "20rem" }}
+            className={`rounded-[12px] relative overflow-hidden ${project.bg}`}
+          >
+          
+          {project.src ? (
+            <Image
+              src={project.src}
+              alt={project.title}
+              className={`absolute ${project?.title === "chazel" ? "bottom-0" : "top-10"} left-1/2 -translate-x-1/2 rounded-t-xl`}
+            />
+          ) : (
+            <div className="bg-gradient-to-r from-[#48453F] to-[#716A64] bg-clip-text text-transparent flex items-center justify-center h-full text-[3rem] tracking-tighter font-bold">
+              {project.title}
+            </div>
+          )}
+        </Link>
+        </div>
+      ))}
+    </div>
+  )
 }
 
 export default ProjectSection;
