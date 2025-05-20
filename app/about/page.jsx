@@ -208,9 +208,9 @@ function Page() {
 
                 <div className="flex items-center justify-between w-full mt-3">
                   <div className='w-full flex items-center justify-start gap-2'>
-                    {socialData.map((social) => (
-                      <Link href={social.link} target='_blank' className='flex items-center justify-center'>
-                       <Image src={social.logo} className='w-[16px] h-[16px]' />
+                    {socialData.map((social, index) => (
+                      <Link key={index} href={social.link} target='_blank' className='flex items-center justify-center'>
+                       <Image src={social.logo} alt={social.source} className='w-[16px] h-[16px]' />
                       </Link>
                     ))}
                   </div>
