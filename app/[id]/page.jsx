@@ -1,7 +1,8 @@
 "use client";
 
-import Wrapper from "@/components/ui/Wrapper";
-import { projectData } from "@/data/projectData";
+
+import Wrapper from "../../components/ui/Wrapper";
+import { projectData } from "../../data/projectData";
 import { ArrowUpRight, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
