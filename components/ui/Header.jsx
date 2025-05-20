@@ -92,8 +92,7 @@ const Header = () => {
             <div className="flex items-end justify-center">
                 <div
                     className="bg-gradient-to-br from-blue-600 to-blue-400 rounded-full w-5 h-5 flex items-center justify-center"
-                    onClick={(e) => {
-                        e.stopPropagation();
+                    onClick={() => {
                         router.push("/about");
                     }}
                 >

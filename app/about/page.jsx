@@ -130,13 +130,18 @@ function Page() {
 
   function homemouseEnter() {
     gsap.to(homeRef.current, {
-      scale:1.3
+      width: "60px",
+      duration:0.67,
+      ease:"power4.out"
+
     })
   }
 
   function homemouseLeave() {
     gsap.to(homeRef.current, {
-      scale:1
+      width: "32px",
+      duration:0.5,
+      ease:"power4.out"
     })
   }
 
@@ -144,12 +149,12 @@ function Page() {
     <div className="bg-[#FCFDF6] w-full h-screen flex items-center justify-center relative">
       <div 
         ref={homeRef} 
-        className="w-8 h-8 bg-gray-400 absolute top-5 left-1/2 tranform -translate-x-1/2 rounded-full text-gray-950 border border-gray-600 flex items-center justify-center cursor-pointer" 
+        className="w-8 h-8 bg-gradient-to-tr from-black to-[#666666] text-stone-300 absolute top-5 left-1/2 tranform -translate-x-1/2 rounded-full flex items-center justify-center cursor-pointer" 
         onMouseEnter={homemouseEnter}
         onMouseLeave={homemouseLeave}
         onClick={() => router.push("/")}
       >
-          <House size={15} />
+          <ArrowLeft size={15} />
       </div>
       <div className="relative w-fit bg-black rounded-full flex items-center justify-start p-2 gap-1">
         <div
@@ -197,9 +202,9 @@ function Page() {
             {introVisible && (
               <>
                 <div className="text-xs md:text-sm text-gray-500 text-balance tracking-tight">
-                I’m at the beginning of my journey as a
-                <a href='https://www.linkedin.com/in/yatiksri1103/' target="_blank" className="font-semibold text-white underline"> software developer</a>, 
-                driven by curiosity, creativity and a desire to build meaningful digital experiences. 
+                I’m at the beginning of my journey as a {" "}
+                <a href='https://www.linkedin.com/in/yatiksri1103/' target="_blank" className="font-semibold text-white underline"> software developer</a> 
+                , driven by curiosity, creativity and a desire to build meaningful digital experiences. 
                 I believe in <span className="font-semibold text-white">solving problems </span>
                 with intention — not just writing code, but thinking critically about what
                 I’m <span className="font-semibold text-white">building</span> and why. 
