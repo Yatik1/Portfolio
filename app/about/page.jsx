@@ -144,7 +144,7 @@ function Page() {
     <div className="bg-[#FCFDF6] w-full h-screen flex items-center justify-center relative">
       <div 
         ref={homeRef} 
-        className="w-8 h-8 bg-gray-400 absolute top-3 rounded-full text-gray-950 border border-gray-600 flex items-center justify-center cursor-pointer" 
+        className="w-8 h-8 bg-gray-400 absolute top-5 left-1/2 tranform -translate-x-1/2 rounded-full text-gray-950 border border-gray-600 flex items-center justify-center cursor-pointer" 
         onMouseEnter={homemouseEnter}
         onMouseLeave={homemouseLeave}
         onClick={() => router.push("/")}
