@@ -16,28 +16,32 @@ export const projectData = [
       {
       src:zone,
       title:"Zone",
-      deployedLink:"https://github.com/Yatik1/zone-ui",
+      deployedLink:"https://zoneagent.vercel.app/",
+      githubLink:"https://github.com/Yatik1/zone-ui",
     },
     {
       src: formers,
       title:"Formers",
       deployedLink:"https://formers.vercel.app/",
-      githubLink:""
+      githubLink:"https://github.com/Yatik1/former"
     },
     {
       src:store ,
       title:"Store",
-      deployedLink:"https://store-orcin-iota.vercel.app/"
+      deployedLink:"https://store-orcin-iota.vercel.app/",
+      githubLink:"https://github.com/Yatik1/Nextjs-ecommerce"
     },
     {
       src: cms,
       title:"Dashboard & CMS",
-      deployedLink:"https://estore-admin-panel-orcin.vercel.app/"
+      deployedLink:"https://estore-admin-panel-orcin.vercel.app/",
+      githubLink:"https://github.com/Yatik1/Ecommerce-admin-panel"
     },
     {
       src:blogbud,
       title:"Blogbud",
-      deployedLink:"https://blogbud.vercel.app/"
+      deployedLink:"https://blogbud.vercel.app/",
+      githubLink:"https://github.com/Yatik1/nextjs_blog"
     }
     
   ];

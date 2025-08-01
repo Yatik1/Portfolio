@@ -15,7 +15,7 @@ function Navbar({onProjectsClick}) {
 
           <section className='flex items-start justify-center gap-2 sm:gap-3 text-xs sm:text-[14px]'>
             <div className="flex items-center justify-center gap-3">
-              <p onClick={() => window.open("https://drive.google.com/file/d/1bMsRk6WBOuJqUfSlDebbO1GbMF1-i_bb/view?usp=sharing", "_blank")}>Resume</p>
+              <p onClick={() => window.open("https://drive.google.com/file/d/1lS2UsYPzf_PiW0USZKOZ-iZLaHZzFBEg/view?usp=sharing", "_blank")}>Resume</p>
               <p onClick={onProjectsClick}>Projects</p>
             </div>
         

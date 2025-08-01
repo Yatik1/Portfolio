@@ -222,7 +222,7 @@ function Page() {
 
                   <div className="flex items-center justify-end bg-white px-3 py-1 rounded-full">
                     <Link 
-                      href="https://drive.google.com/file/d/1bMsRk6WBOuJqUfSlDebbO1GbMF1-i_bb/view?usp=sharing"
+                      href="https://drive.google.com/file/d/1lS2UsYPzf_PiW0USZKOZ-iZLaHZzFBEg/view?usp=sharing"
                       target='_blank' 
                       className='text-xs text-black font-semibold'
                     >
